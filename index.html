@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        .calculator {
+            width: 300px;
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        .calculator__display {
+            width: 93%;
+            height: 50px;
+            background: #333;
+            color: white;
+            text-align: right;
+            padding: 10px;
+            font-size: 1.5em;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .calculator__buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        .button {
+            width: 100%;
+            height: 50px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            background: #444;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background: #666;
+        }
+        .button--equal {
+            grid-column: span 2;
+            background: #c1121f;
+        }
+        .button--equal:hover {
+            background: #780000;
+        }
+    </style>
+</head>
+<body>
+<div class="calculator">
+    <div class="calculator__display" id="display">0</div>
+    <div class="calculator__buttons">
+        <button class="button" onclick="clearDisplay()">C</button>
+        <button class="button" onclick="deleteLast()">DEL</button>
+        <button class="button" onclick="appendOperator('^')">^</button>
+        <button class="button" onclick="appendOperator('/')">/</button>
+
+        <button class="button" onclick="appendNumber(7)">7</button>
+        <button class="button" onclick="appendNumber(8)">8</button>
+        <button class="button" onclick="appendNumber(9)">9</button>
+        <button class="button" onclick="appendOperator('*')">*</button>
+
+        <button class="button" onclick="appendNumber(4)">4</button>
+        <button class="button" onclick="appendNumber(5)">5</button>
+        <button class="button" onclick="appendNumber(6)">6</button>
+        <button class="button" onclick="appendOperator('-')">-</button>
+
+        <button class="button" onclick="appendNumber(1)">1</button>
+        <button class="button" onclick="appendNumber(2)">2</button>
+        <button class="button" onclick="appendNumber(3)">3</button>
+        <button class="button" onclick="appendOperator('+')">+</button>
+
+        <button class="button" onclick="appendNumber(0)">0</button>
+        <button class="button" onclick="appendOperator('.')">.</button>
+        <button class="button button--equal" onclick="calculateResult()">=</button>
+    </div>
+</div>
+<script>
+    let display = document.getElementById('display');
+    let expression = localStorage.getItem('expression') || '';
+    updateDisplay();
+
+    function updateDisplay() {
+        display.textContent = expression || '0';
+        localStorage.setItem('expression', expression);
+    }
+
+    function clearDisplay() {
+        expression = '';
+        updateDisplay();
+    }
+
+    function deleteLast() {
+        expression = expression.slice(0, -1);
+        updateDisplay();
+    }
+
+    function appendNumber(num) {
+        expression += num;
+        updateDisplay();
+    }
+
+    function appendOperator(op) {
+        if (expression && !isNaN(expression.slice(-1))) {
+            expression += op;
+            updateDisplay();
+        }
+    }
+
+    function calculateResult() {
+        try {
+            expression = eval(expression.replace('^', '**')).toString();
+        } catch {
+            expression = 'Ошибка';
+        }
+        updateDisplay();
+    }
+</script>
+</body>
+</html>

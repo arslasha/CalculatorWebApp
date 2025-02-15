@@ -1,6 +1,7 @@
 .calculator {
     width: 320px;
     max-width: 100%;
+    height: auto;
     background: #222;
     padding: 20px;
     border-radius: 10px;

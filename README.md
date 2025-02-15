@@ -14,7 +14,7 @@
 ---
 
 ## **Файловая структура**
-```bash
+```
 /project-root
 │── index.html         # Основной HTML-файл
 │── scripts.js         # Основной JavaScript-код
@@ -35,21 +35,12 @@
 
 ## **Как использовать**
 
-### 1️⃣ Запуск проекта локально
-
-#### Склонируйте репозиторий:
-```shell
-git clone https://github.com/your-username/calculator-webapp.git
+### GitHub Pages
+Проект можно использовать с помощью сервиса GitHub Pages по 
+этой ссылке: 
+```url
+https://arslasha.github.io/CalculatorWebApp/
 ```
-
-#### Перейдите в папку проекта:
-```shell
-cd calculator-webapp
-```
-### 2️⃣ Развертывание на GitHub Pages
-1. Перейдите в настройки репозитория на GitHub.
-2. В разделе Pages выберите ветку main и папку /root.
-3. Дождитесь деплоя — ссылка появится в настройках.
 
 ---
 

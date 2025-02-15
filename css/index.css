@@ -1,5 +1,5 @@
-@import "./blocks/calculator/calculator.css";
-@import "./blocks/calculator/__display.css";
-@import "./blocks/calculator/__buttons.css";
-@import "./blocks/button/button.css";
-@import "./blocks/button/--equal.css";
+@import "blocks/calculator/calculator.css";
+@import "blocks/calculator/calculator__display.css";
+@import "blocks/calculator/calculator__buttons.css";
+@import "blocks/button/button.css";
+@import "blocks/button/button--equal.css";

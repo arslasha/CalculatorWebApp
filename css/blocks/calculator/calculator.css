@@ -1,8 +1,30 @@
 .calculator {
-    width: 300px;
+    width: 320px;
+    max-width: 100%;
     background: #222;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    text-align: center;
+}
+
+/* Телефоны */
+@media (max-width: 600px) {
+    .calculator {
+        width: 90%;
+        padding: 15px;
+    }
+}
+
+/* Планшеты */
+@media (min-width: 600px) and (max-width: 1024px) {
+    .calculator {
+        width: 400px;
+    }
+}
+
+/* Десктопы */
+@media (min-width: 1440px) {
+    .calculator {
+        width: 350px;
+    }
 }

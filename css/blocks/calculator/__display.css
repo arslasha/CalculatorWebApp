@@ -1,11 +1,26 @@
 .calculator__display {
-    width: 94%;
+    width: 95%;
     height: 50px;
     background: #333;
     color: white;
     text-align: right;
     padding: 10px;
-    font-size: 1.5em;
+    font-size: 1.8em;
     border-radius: 5px;
     margin-bottom: 10px;
+}
+
+/* Телефоны */
+@media (max-width: 600px) {
+    .calculator__display {
+        font-size: 1.5em;
+        height: 50px;
+    }
+}
+
+/* Планшеты */
+@media (min-width: 600px) and (max-width: 1024px) {
+    .calculator__display {
+        font-size: 2em;
+    }
 }

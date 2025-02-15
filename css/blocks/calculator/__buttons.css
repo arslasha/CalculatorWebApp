@@ -3,3 +3,17 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
 }
+
+/* Телефоны */
+@media (max-width: 600px) {
+    .calculator__buttons {
+        gap: 8px;
+    }
+}
+
+/* Планшеты */
+@media (min-width: 600px) and (max-width: 1024px) {
+    .calculator__buttons {
+        gap: 12px;
+    }
+}

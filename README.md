@@ -23,11 +23,11 @@
 │   │── /blocks        # Блоки по методологии БЭМ
 │   │   │── /calculator
 │   │   │   │── calculator.css      # Основные стили калькулятора
-│   │   │   │── __display.css       # Стили экрана вывода
-│   │   │   │── __buttons.css       # Стили кнопочной панели
+│   │   │   │── calculator__display.css       # Стили экрана вывода
+│   │   │   │── calculator__buttons.css       # Стили кнопочной панели
 │   │   │── /button
 │   │   │   │── button.css          # Общие стили кнопок
-│   │   │   │── --equal.css         # Стили кнопки "="
+│   │   │   │── button--equal.css         # Стили кнопки "="
 │── README.md          # Документация проекта
 ```
 

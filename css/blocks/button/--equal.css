@@ -1,0 +1,8 @@
+.button--equal {
+    grid-column: span 2;
+    background: #c1121f;
+}
+
+.button--equal:hover {
+    background: #780000;
+}
